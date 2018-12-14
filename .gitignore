@@ -1,0 +1,15 @@
+# bin
+bin
+obj
+VirtualMindTest/packages
+IntiveFDV/packages
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS
+.vs/
+.vscode
