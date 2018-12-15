@@ -8,9 +8,9 @@ namespace Models.Constants
 {
     public class RentalDescriptionConstant
     {
-        public readonly string HOUR = "By Hour";
-        public readonly string DAY = "By Day";
-        public readonly string WEEK = "By Week";
-        public readonly string FAMILY_PROMOTION = "Family Promotion";
+        public const string HOUR = "By Hour";
+        public const string DAY = "By Day";
+        public const string WEEK = "By Week";
+        public const string FAMILY_PROMOTION = "Family Promotion";
     }
 }
