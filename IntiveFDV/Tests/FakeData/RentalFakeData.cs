@@ -8,14 +8,27 @@ namespace Tests.FakeData
 {
     public class RentalFakeData
     {
-        public List<RentalRequest> GetRentalRequests()
+        public List<RentalRequest> GetRentalRequestsWithoutDiscount()
         {
-            var customers = GetCustomers();
+            var customers = GetCustomersWithoutDiscount();
             var requests = new List<RentalRequest>();
 
             foreach (var customer in customers)
             {
                 requests.Add(GetRentalRequestOk(customer, 2, RentalType.Hour));
+            }
+
+            return requests;
+        }
+
+        public List<RentalRequest> GetRentalRequestsWithDiscount()
+        {
+            var customers = GetCustomersWithDiscount();
+            var requests = new List<RentalRequest>();
+
+            foreach (var customer in customers)
+            {
+                requests.Add(GetRentalRequestOk(customer, 1, RentalType.Day));
             }
 
             return requests;
@@ -33,10 +46,10 @@ namespace Tests.FakeData
 
         public Customer GetCustomerByIndetificationType(IdentificationType type)
         {
-            return GetCustomers().Where(c => c.IdentificationType == type).Single();
+            return GetCustomersWithoutDiscount().Where(c => c.IdentificationType == type).Single();
         }
 
-        public List<Customer> GetCustomers()
+        public List<Customer> GetCustomersWithoutDiscount()
         {
             return new List<Customer>
             {
@@ -53,6 +66,41 @@ namespace Tests.FakeData
                     LastName = "Perez",
                     IdentificationNumber = "123321234",
                     IdentificationType = IdentificationType.Passport
+                }
+            };
+        }
+
+        public List<Customer> GetCustomersWithDiscount()
+        {
+            return new List<Customer>
+            {
+                new Customer
+                {
+                    FirstName = "Pablo",
+                    LastName = "Mendez",
+                    IdentificationNumber = "40221922",
+                    IdentificationType = IdentificationType.Dni
+                },
+                new Customer
+                {
+                    FirstName = "Cristina",
+                    LastName = "Perez",
+                    IdentificationNumber = "123321234",
+                    IdentificationType = IdentificationType.Passport
+                },
+                new Customer
+                {
+                    FirstName = "Sebastian",
+                    LastName = "Mendez",
+                    IdentificationNumber = "22134221",
+                    IdentificationType = IdentificationType.Dni
+                },
+                new Customer
+                {
+                    FirstName = "Daniela",
+                    LastName = "Mendez",
+                    IdentificationNumber = "50332121",
+                    IdentificationType = IdentificationType.Dni
                 }
             };
         }
