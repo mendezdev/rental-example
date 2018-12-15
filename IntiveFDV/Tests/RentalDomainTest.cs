@@ -27,15 +27,29 @@ namespace Tests
         }
 
         [TestMethod]
-        public void GetRental_Ok()
+        public void GetRentalWithoutDiscount_Ok()
         {
-            var requests = fakeData.GetRentalRequests();
+            var requests = fakeData.GetRentalRequestsWithoutDiscount();
             var contractResponse = rentalDomain.Rent(requests);
 
             Assert.IsNotNull(contractResponse);
             Assert.IsNotNull(contractResponse.Details);
             Assert.IsNotNull(contractResponse.Details[0].Customer);
-            Assert.IsTrue(contractResponse.Details[0].Customer.FirstName == "Pablo");
+            Assert.IsTrue(contractResponse.Details.Any(c => c.Customer.FirstName == "Pablo"));
+        }
+
+        [TestMethod]
+        public void GetRentalWithDiscount_Ok()
+        {
+            var requests = fakeData.GetRentalRequestsWithDiscount();
+            var contractResponse = rentalDomain.Rent(requests);
+
+            Assert.IsNotNull(contractResponse);
+            Assert.IsNotNull(contractResponse.Details);
+            Assert.IsNotNull(contractResponse.Details[0].Customer);
+            Assert.IsTrue(contractResponse.Details.Any(c => c.Customer.FirstName == "Pablo"));
+            Assert.IsTrue(contractResponse.HasFamilyDiscount);
+            Assert.IsTrue(contractResponse.Discount > 0);
         }
     }
 }
