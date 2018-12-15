@@ -77,7 +77,6 @@ namespace Domain.Implementation
         public ContractResponse Rent(IList<RentalRequest> requests)
         {
             int requestCount = 0;
-            bool hasFamilyDiscount = false;
 
             var response = new ContractResponse
             {
@@ -89,12 +88,12 @@ namespace Domain.Implementation
                 var detail = detailStrategy[request.RentalType](request);
                 response.Total += detail.RentalCost;
                 details.Add(detail);
-                if (!hasFamilyDiscount)
+                if (!response.HasFamilyDiscount)
                 {
-                    if (requestCount >= 3 || requestCount <= 5)
+                    requestCount++;
+                    if (requestCount >= 3 && requestCount <= 5)
                     {
-                        requestCount++;
-                        hasFamilyDiscount = true;
+                        response.HasFamilyDiscount = true;
                         requestCount = 0;
                     }
                 }
@@ -102,7 +101,7 @@ namespace Domain.Implementation
 
             response.Details = details;
 
-            if (hasFamilyDiscount)
+            if (response.HasFamilyDiscount)
             {
                 var rentalDiscount = response.Total * 0.30m;
                 response.Discount = rentalDiscount;
