@@ -45,6 +45,7 @@
     <Compile Include="Enums\IdentificationType.cs" />
     <Compile Include="Enums\RentalType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\RentalRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
