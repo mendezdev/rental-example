@@ -76,6 +76,9 @@ namespace Domain.Implementation
 
         public ContractResponse Rent(IList<RentalRequest> requests)
         {
+            int requestCount = 0;
+            bool hasFamilyDiscount = false;
+
             var response = new ContractResponse
             {
                 CreatedAt = DateTime.Now
@@ -86,9 +89,25 @@ namespace Domain.Implementation
                 var detail = detailStrategy[request.RentalType](request);
                 response.Total += detail.RentalCost;
                 details.Add(detail);
+                if (!hasFamilyDiscount)
+                {
+                    if (requestCount >= 3 || requestCount <= 5)
+                    {
+                        requestCount++;
+                        hasFamilyDiscount = true;
+                        requestCount = 0;
+                    }
+                }
             }
 
             response.Details = details;
+
+            if (hasFamilyDiscount)
+            {
+                var rentalDiscount = response.Total * 0.30m;
+                response.Discount = rentalDiscount;
+                response.Total -= rentalDiscount;
+            }
             return response;
         }
     }
