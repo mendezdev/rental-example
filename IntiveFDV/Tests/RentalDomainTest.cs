@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tests.FakeData;
 
 namespace Tests
 {
@@ -16,26 +17,19 @@ namespace Tests
     public class RentalDomainTest
     {
         private IRentalDomain rentalDomain;
+        private RentalFakeData fakeData;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            fakeData = new RentalFakeData();
+            rentalDomain = new RentalDomain();
+        }
 
         [TestMethod]
         public void GetRental_Ok()
         {
-            rentalDomain = new RentalDomain();
-            var requests = new List<RentalRequest>
-            {
-                new RentalRequest
-                {
-                    Customer = new Customer
-                    {
-                        FirstName = "Pablo",
-                        LastName = "Mendez",
-                        IdentificationNumber = "34117676",
-                        IdentificationType = IdentificationType.Dni
-                    },
-                    Quantity = 1,
-                    RentalType = RentalType.Hour
-                }
-            };
+            var requests = fakeData.GetRentalRequests();
             var contractResponse = rentalDomain.Rent(requests);
 
             Assert.IsNotNull(contractResponse);
