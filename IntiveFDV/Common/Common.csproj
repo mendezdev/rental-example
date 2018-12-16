@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\RentalRequiredFieldException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalRequiredFieldException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
