@@ -79,7 +79,9 @@ namespace Domain.Implementation
             {
                 CreatedAt = DateTime.Now
             };
+
             var details = new List<DetailResponse>();
+
             foreach (var request in requests)
             {
                 var detail = detailStrategy[request.RentalType](request);

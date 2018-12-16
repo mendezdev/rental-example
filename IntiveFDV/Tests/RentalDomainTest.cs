@@ -48,6 +48,7 @@ namespace Tests
             Assert.IsNotNull(contractResponse.Details);
             Assert.IsNotNull(contractResponse.Details[0].Customer);
             Assert.IsTrue(contractResponse.Details.Any(c => c.Customer.FirstName == "Pablo"));
+            Assert.IsTrue(contractResponse.Details.Count >= 3);
             Assert.IsTrue(contractResponse.HasFamilyDiscount);
             Assert.IsTrue(contractResponse.Discount > 0);
         }
