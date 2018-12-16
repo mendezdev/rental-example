@@ -72,22 +72,10 @@ namespace Tests.FakeData
 
         public List<Customer> GetCustomersWithDiscount()
         {
-            return new List<Customer>
+            var customers = GetCustomersWithoutDiscount();
+
+            customers.AddRange(new List<Customer>
             {
-                new Customer
-                {
-                    FirstName = "Pablo",
-                    LastName = "Mendez",
-                    IdentificationNumber = "40221922",
-                    IdentificationType = IdentificationType.Dni
-                },
-                new Customer
-                {
-                    FirstName = "Cristina",
-                    LastName = "Perez",
-                    IdentificationNumber = "123321234",
-                    IdentificationType = IdentificationType.Passport
-                },
                 new Customer
                 {
                     FirstName = "Sebastian",
@@ -102,7 +90,9 @@ namespace Tests.FakeData
                     IdentificationNumber = "50332121",
                     IdentificationType = IdentificationType.Dni
                 }
-            };
+            });
+
+            return customers;
         }
     }
 }
