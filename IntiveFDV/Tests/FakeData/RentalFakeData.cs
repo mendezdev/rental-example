@@ -94,5 +94,10 @@ namespace Tests.FakeData
 
             return customers;
         }
+
+        public Customer GetSimpleCustomer()
+        {
+            return GetCustomerByIndetificationType(IdentificationType.Dni);
+        }
     }
 }
