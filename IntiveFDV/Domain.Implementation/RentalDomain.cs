@@ -20,7 +20,7 @@ namespace Domain.Implementation
         {
             detailStrategy = new Dictionary<RentalType, Func<RentalRequest, DetailResponse>>
             {
-                { RentalType.Hour, RentByHour},
+                { RentalType.Hour, RentByHour },
                 { RentalType.Day, RentByDay },
                 { RentalType.Week, RentByWeek }
             };
@@ -28,7 +28,6 @@ namespace Domain.Implementation
 
         private DetailResponse RentByHour(RentalRequest request)
         {
-            //TODO: logic to create contract by hour
             var start = DateTime.Now;
             var response = new DetailResponse()
             {
@@ -44,7 +43,6 @@ namespace Domain.Implementation
 
         private DetailResponse RentByDay(RentalRequest request)
         {
-            //TODO: logic to create contract by day
             var start = DateTime.Now;
             var response = new DetailResponse()
             {
@@ -60,7 +58,6 @@ namespace Domain.Implementation
 
         private DetailResponse RentByWeek(RentalRequest request)
         {
-            //TODO: logic to create contract by week
             var start = DateTime.Now;
             var response = new DetailResponse()
             {
