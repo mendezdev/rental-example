@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Domain.Implementation.Helpers;
+using Domain.Implementation.Validators;
 using Models.Constants;
 using Models.Entities;
 using Models.Enums;
@@ -73,6 +75,9 @@ namespace Domain.Implementation
 
         public ContractResponse Rent(IList<RentalRequest> requests)
         {
+            var rentalHelper = new RentalHelper();
+            rentalHelper.ValidateRentalRequests(requests);
+
             int requestCount = 0;
 
             var response = new ContractResponse

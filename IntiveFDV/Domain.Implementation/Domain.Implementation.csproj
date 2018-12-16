@@ -53,12 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\RentalHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalDomain.cs" />
     <Compile Include="Validators\CustomerValidator.cs" />
     <Compile Include="Validators\RentalFieldValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{50c50e73-8f1c-44ae-9c07-291d11feda52}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{a793d355-8a94-4085-a3a9-82d3599eb182}</Project>
       <Name>Domain</Name>
