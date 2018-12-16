@@ -18,6 +18,8 @@ namespace Domain.Implementation.Validators
                 .GreaterThan(0).WithMessage($"{baseErrorMessage} a quantity");
             RuleFor(x => x.RentalType)
                 .IsInEnum().WithMessage($"{baseErrorMessage} an option rent");
+            RuleFor(x => x.Customer)
+                .NotNull().WithMessage("Need to provide customer information.");
             RuleFor(x => x.Customer).SetValidator(new CustomerValidator());
         }
     }
