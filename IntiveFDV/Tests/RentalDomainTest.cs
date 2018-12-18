@@ -1,6 +1,5 @@
 ﻿using Common.Exceptions;
 using Domain;
-using Domain.Implementation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Models.Entities;
 using Models.Enums;
@@ -17,7 +16,7 @@ namespace Tests
     [TestClass]
     public class RentalDomainTest
     {
-        private IRentalDomain rentalDomain;
+        private RentalDomain rentalDomain;
         private RentalFakeData fakeData;
 
         [TestInitialize]

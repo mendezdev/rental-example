@@ -60,10 +60,6 @@
       <Project>{50c50e73-8f1c-44ae-9c07-291d11feda52}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Domain.Implementation\Domain.Implementation.csproj">
-      <Project>{d4d30344-d4ef-4a80-9e06-1cdef5956c89}</Project>
-      <Name>Domain.Implementation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{a793d355-8a94-4085-a3a9-82d3599eb182}</Project>
       <Name>Domain</Name>

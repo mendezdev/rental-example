@@ -8,7 +8,7 @@ using ViewModels;
 
 namespace Domain
 {
-    class RentalDomain
+    public class RentalDomain
     {
         private IDictionary<RentalType, Func<RentalRequest, DetailResponse>> detailStrategy;
 
