@@ -39,4 +39,4 @@ Then go to the toolbar and make click on Test > Windows > Test Explorer this wil
 Once open you have to make click on "Run All".
 If all the tests are green, GREAT! if not, :(
 
-For code coverage purpose, I used the Visual Studio Enterprise IDE. It have the option to see it on Test > Analyze Code Coverga > All Test (in the toolbar)
+For code coverage purpose, I used the Visual Studio Enterprise IDE. It have the option to see it on Test > Analyze Code Coverage > All Test (in the toolbar)
