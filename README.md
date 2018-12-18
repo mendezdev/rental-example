@@ -3,9 +3,9 @@
 ## Description
 This is a simple rental company who have differents options rent. For example:
 
-1 hour rent --> $5
-1 day rent --> $20
-1 week rent --> $5
+- 1 hour rent --> $5
+- 1 day rent --> $20
+- 1 week rent --> $5
 
 Also have one promotion:
 
