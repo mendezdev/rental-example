@@ -15,10 +15,10 @@ Family Rental --> 3 to 5 rental (of any type) have a 30% discount of the total p
 - This solutions assumes that the customer comes to the copmany rent and has the only three options and promo. 
 So the customer purchase an option and the program calculate the start and the finish rent, the quantity bicycle, the options type, the cost per customer and the total.
 - The program only gives the contract, no the paymnet ticket.
-- For the Family promo, the logic only check if the request comes with, at least, 3 bicycle request the apply it. If come
-- The logic assumes that other class gives the requests
-- The logic assumes that if a customer returns the bike before his contract says no money is reimbursed
-- This logic assumes that there is no need to contemplate surcharges if a customer returns the bicycle after what his contract says
+- For the Family promo, the logic only check if the request comes with, at least, 3 bicycle request the apply it. If come.
+- The logic assumes that other class gives the requests.
+- The logic assumes that if a customer returns the bike before his contract says no money is reimbursed.
+- This logic assumes that there is no need to contemplate surcharges if a customer returns the bicycle after what his contract says.
 
 ## Design
 - The solution have a solution with differentes projects.
