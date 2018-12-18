@@ -21,12 +21,12 @@ So the customer purchase an option and the program calculate the start and the f
 - This logic assumes that there is no need to contemplate surcharges if a customer returns the bicycle after what his contract says
 
 ## Design
-The solution have a solution with differentes projects.
-The "Models" project contains the main classes for share information between them.
-The "ViewModels" project contains only the response classes for the client who will use this.
-The "Domain" project contains all the bussiness logic.
-The "Common" project contains classes that are cross project.
-The "Tests" project, only contains the unit test
+- The solution have a solution with differentes projects.
+- The "Models" project contains the main classes for share information between them.
+- The "ViewModels" project contains only the response classes for the client who will use this.
+- The "Domain" project contains all the bussiness logic.
+- The "Common" project contains classes that are cross project.
+- The "Tests" project, only contains the unit test
 
 ## Development practices
 I try to use the best practices that I know.
