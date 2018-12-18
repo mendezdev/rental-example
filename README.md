@@ -7,7 +7,7 @@ This is a simple rental company who have differents options rent. For example:
 1 day rent --> $20
 1 week rent --> $5
 
-Also have one promotion
+Also have one promotion:
 
 Family Rental --> 3 to 5 rental (of any type) have a 30% discount of the total price.
 
