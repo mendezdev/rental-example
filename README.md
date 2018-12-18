@@ -5,7 +5,7 @@ This is a simple rental company who have differents options rent. For example:
 
 - 1 hour rent --> $5
 - 1 day rent --> $20
-- 1 week rent --> $5
+- 1 week rent --> $60
 
 Also have one promotion:
 
@@ -29,8 +29,8 @@ So the customer purchase an option and the program calculate the start and the f
 - The "Tests" project, only contains the unit test
 
 ## Development practices
-I try to use the best practices that I know.
-For the options rent, I think in a strategy pattern with the differents options and each one knows how to respond.
+I try to use the best practices that I know. Obviously I still have a lot to learn and I hope you give a lot of suggestions.
+- I simply tried to maintain a single responsibility per class and implemented a strategy strategy for the rent options
 
 ## Tests
 To run the tests you will need to open the IntiveFDV.sln in the IntiveFDV folder (root folder) with a Visual Studio IDE 2017 or higher.
