@@ -67,7 +67,7 @@ namespace Domain
             return response;
         }
 
-        public ContractResponse Rent(IList<RentalRequest> requests)
+        public ContractResponse BuildContract(IList<RentalRequest> requests)
         {
             var rentalHelper = new RentalHelper();
             rentalHelper.ValidateRentalRequests(requests);
