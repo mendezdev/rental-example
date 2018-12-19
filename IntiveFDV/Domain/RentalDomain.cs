@@ -2,9 +2,9 @@
 using Models.Constants;
 using Models.Enums;
 using Models.Requests;
+using Models.Responses;
 using System;
 using System.Collections.Generic;
-using ViewModels;
 
 namespace Domain
 {
