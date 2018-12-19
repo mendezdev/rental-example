@@ -31,7 +31,7 @@ namespace Tests
         public void GetRentalWithoutDiscount_Ok()
         {
             var requests = fakeData.GetRentalRequestsWithoutDiscount();
-            var contractResponse = rentalDomain.Rent(requests);
+            var contractResponse = rentalDomain.BuildContract(requests);
 
             Assert.IsNotNull(contractResponse);
             Assert.IsNotNull(contractResponse.Details);
@@ -44,7 +44,7 @@ namespace Tests
         public void GetRentalWithDiscount_Ok()
         {
             var requests = fakeData.GetRentalRequestsWithDiscount();
-            var contractResponse = rentalDomain.Rent(requests);
+            var contractResponse = rentalDomain.BuildContract(requests);
 
             Assert.IsNotNull(contractResponse);
             Assert.IsNotNull(contractResponse.Details);
@@ -69,7 +69,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -90,7 +90,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -112,7 +112,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -134,7 +134,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -156,7 +156,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -178,7 +178,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -200,7 +200,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -222,7 +222,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -244,7 +244,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
@@ -266,7 +266,7 @@ namespace Tests
 
             try
             {
-                var contractResponse = rentalDomain.Rent(requests);
+                var contractResponse = rentalDomain.BuildContract(requests);
             }
             catch (RentalRequiredFieldException ex)
             {
