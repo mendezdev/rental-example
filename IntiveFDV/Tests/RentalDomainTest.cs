@@ -56,6 +56,47 @@ namespace Tests
         }
 
         [TestMethod]
+        [TestCategory("RentalContract")]
+        public void GetRentalWithoutDiscount_CostOk()
+        {
+            var customers = fakeData.GetCustomersWithoutDiscount();
+
+            decimal costPerHour = 5, costPerDay = 20;
+            int quantityPerHour = 4, quantityPerDay = 1;
+
+            decimal totalRentalDayType = (costPerDay * quantityPerDay);
+            decimal totalRentalHourType = (costPerHour * quantityPerHour);
+            decimal total = totalRentalDayType + totalRentalHourType;
+
+            var requests = new List<RentalRequest>()
+            {
+                new RentalRequest {
+                    Customer = customers[0],
+                    Quantity = quantityPerDay,
+                    RentalType = RentalType.Day
+                },
+                new RentalRequest {
+                    Customer = customers[1],
+                    Quantity = quantityPerHour,
+                    RentalType = RentalType.Hour
+                }
+            };
+            var contractResponse = rentalDomain.BuildContract(requests);
+
+            Assert.IsNotNull(contractResponse);
+            Assert.IsNotNull(contractResponse.Details);
+            Assert.IsNotNull(contractResponse.Details[0].Customer);
+            Assert.IsNotNull(contractResponse.Details[1].Customer);            
+            Assert.IsTrue(!contractResponse.HasFamilyDiscount);
+            Assert.IsTrue(contractResponse.Discount == 0);
+            var detailPerDay = contractResponse.Details.Where(d => d.Customer.FirstName == customers[0].FirstName).Single();
+            var detailPerHour = contractResponse.Details.Where(d => d.Customer.FirstName == customers[1].FirstName).Single();
+            Assert.IsTrue(detailPerDay.RentalCost == totalRentalDayType);
+            Assert.IsTrue(detailPerHour.RentalCost == totalRentalHourType);
+            Assert.IsTrue(contractResponse.Total == total);
+        }
+
+        [TestMethod]
         [TestCategory("RequiredFieldException")]
         public void GetRentalWithRetalException_RequestQuantityLessThanZero()
         {
